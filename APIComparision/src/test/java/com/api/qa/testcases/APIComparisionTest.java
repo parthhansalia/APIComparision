@@ -40,7 +40,7 @@ public class APIComparisionTest {
 
 		Response response1 = apiResponse.getAPIResponse(api1);
 		Response response2 = apiResponse.getAPIResponse(api2);
-		
+
 		Assert.assertEquals(mapper.readTree(response1.asString()), mapper.readTree(response2.asString()));
 
 
