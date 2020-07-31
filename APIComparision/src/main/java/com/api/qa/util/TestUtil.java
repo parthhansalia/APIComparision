@@ -17,8 +17,8 @@ public class TestUtil {
 
 	 static JSONObject json = null;
 
-	public final static String FILE1 = "/Users/parthhansalia/Documents/MyProject/APIComparisionGoJek-master/src/main/java/com/qa/testdata/APIFile1";
-	public final static String FILE2 = "/Users/parthhansalia/Documents/MyProject/APIComparisionGoJek-master/src/main/java/com/qa/testdata/APIFile2";
+	public final static String FILE1 = "/Users/parthhansalia/Documents/MyProjects/APIComparision/src/main/java/com/api/qa/testdata/APIFile1";
+	public final static String FILE2 = "/Users/parthhansalia/Documents/MyProjects/APIComparision/src/main/java/com/api/qa/testdata/APIFile2";
 	public final static int STATUSCODE_200 = 200;
 
 
