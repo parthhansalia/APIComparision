@@ -7,16 +7,13 @@ import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
 import java.io.IOException;
-import java.util.Map;
 
 public class APIComparisionTest {
 
-	private Map<String, Object> mapFile1;
-	private Map<String, Object> mapFile2;
 
 	APIResponse apiResponse = new APIResponse();
+	ObjectMapper mapper = new ObjectMapper();
 
 
 	@DataProvider()
@@ -43,16 +40,8 @@ public class APIComparisionTest {
 
 		Response response1 = apiResponse.getAPIResponse(api1);
 		Response response2 = apiResponse.getAPIResponse(api2);
-
-		System.out.println(response1.asString() + " " + response2.getBody());
-
-		ObjectMapper mapper = new ObjectMapper();
-
-		Assert.assertEquals(mapper.readTree(String.valueOf(response1.jsonPath())), mapper.readTree(String.valueOf(response2.jsonPath())));
-
-
-
-
+		
+		Assert.assertEquals(mapper.readTree(response1.asString()), mapper.readTree(response2.asString()));
 
 
 
