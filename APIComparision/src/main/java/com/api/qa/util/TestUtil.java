@@ -17,8 +17,8 @@ public class TestUtil {
 
 	 static JSONObject json = null;
 
-	public final static String FILE1 = "/Users/parthhansalia/Documents/MyProjects/APIComparision/src/main/java/com/api/qa/testdata/APIFile1";
-	public final static String FILE2 = "/Users/parthhansalia/Documents/MyProjects/APIComparision/src/main/java/com/api/qa/testdata/APIFile2";
+	public final static String FILE1 = System.getProperty("user.dir")+"/src/main/java/com/api/qa/testdata/APIFile1";
+	public final static String FILE2 = System.getProperty("user.dir")+"/src/main/java/com/api/qa/testdata/APIFile2";
 	public final static int STATUSCODE_200 = 200;
 
 
@@ -50,61 +50,7 @@ public class TestUtil {
 	}
 
 
-	//Convert string to map
 
-	public static Map<String, Object> jsonToMap(String json1) {
-		Map<String, Object> retMap = new HashMap<>();
-		JSONParser parser = new JSONParser();
-
-		try {
-			json = (JSONObject) parser.parse(json1);
-
-		} catch (ParseException e) {
-			e.printStackTrace();
-		}
-
-		if(json != null) {
-			retMap = toMap(json);
-		}
-		return retMap;
-	}
-
-	public static Map<String, Object> toMap(JSONObject object) {
-		Map<String, Object> map = new HashMap<>();
-
-		Iterator<String> keysItr = object.keySet().iterator();
-		while(keysItr.hasNext()) {
-			String key = keysItr.next();
-			Object value = object.get(key);
-
-			if(value instanceof JSONArray) {
-				value = toList((JSONArray) value);
-			}
-
-			else if(value instanceof JSONObject) {
-				value = toMap((JSONObject) value);
-			}
-			map.put(key, value);
-		}
-
-		return map;
-	}
-
-	public static List<Object> toList(JSONArray array) {
-		List<Object> list = new ArrayList<>();
-		for(int i = 0; i < array.size(); i++) {
-			Object value = array.get(i);
-			if(value instanceof JSONArray) {
-				value = toList((JSONArray) value);
-			}
-
-			else if(value instanceof JSONObject) {
-				value = toMap((JSONObject) value);
-			}
-			list.add(value);
-		}
-		return list;
-	}
 	
 
 }
