@@ -7,7 +7,7 @@
     </listeners>
 
 
-    <test name="Weather Test Cases">
+    <test name="API Test Cases">
         <classes>
             <class name="com.api.qa.testcases.APIComparisionTest"/>
         </classes>

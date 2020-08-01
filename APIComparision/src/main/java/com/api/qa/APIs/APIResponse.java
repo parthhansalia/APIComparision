@@ -1,7 +1,6 @@
-package com.api.qa.pages;
+package com.api.qa.APIs;
 
-import com.api.qa.base.TestBase;
-import com.api.qa.util.TestUtil;
+import com.api.qa.util.DataUtil;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 
@@ -9,16 +8,16 @@ import io.restassured.response.Response;
 import static io.restassured.RestAssured.given;
 
 
-public class APIResponse extends TestBase {
+public class APIResponse {
 
 	
-	public Response getAPIResponse(String api) {
+	public static Response getAPIResponse(String url) {
 
 			return     given()
 				       .when()
-					   		.get(api)
+					   		.get(url)
 					   .then()
-							.statusCode(TestUtil.STATUSCODE_200)
+							.statusCode(DataUtil.STATUSCODE_200)
 							.contentType(ContentType.JSON).extract().response();
 
 

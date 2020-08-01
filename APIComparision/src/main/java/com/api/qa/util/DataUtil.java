@@ -1,5 +1,6 @@
 package com.api.qa.util;
 
+import com.api.qa.base.TestBase;
 import org.apache.commons.lang3.ArrayUtils;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -13,12 +14,17 @@ import java.util.*;
 import java.util.stream.IntStream;
 
 
-public class TestUtil {
+public class DataUtil extends TestBase{
 
 
-	public final static String FILE1 = System.getProperty("user.dir")+"/src/main/java/com/api/qa/testdata/APIFile1";
-	public final static String FILE2 = System.getProperty("user.dir")+"/src/main/java/com/api/qa/testdata/APIFile2";
+	public final static String FILE1 = System.getProperty("user.dir")+"/src/main/java/com/api/qa/resources/APIFile1";
+	public final static String FILE2 = System.getProperty("user.dir")+"/src/main/java/com/api/qa/resources/APIFile2";
 	public final static int STATUSCODE_200 = 200;
+
+
+	public DataUtil() {
+		super();
+	}
 
 
 	public static Object[][] getDataFromFile(String filePath) throws IOException {
