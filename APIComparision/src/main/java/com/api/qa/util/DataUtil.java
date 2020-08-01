@@ -42,7 +42,7 @@ public class DataUtil extends TestBase{
 
 	public static Object[][] combine(Object[][] a1, Object[][] a2){
 		if(a1.length != a2.length){
-			throw new IllegalArgumentException("object array provided do not match in length");
+			System.out.println("Number of APIs are not same in both file");
 		}
 		return IntStream.range(0,a1.length)
 				.mapToObj(num -> concatAll(a1[num],a2[num]))
