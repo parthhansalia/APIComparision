@@ -16,19 +16,17 @@ import java.util.stream.IntStream;
 
 public class DataUtil extends TestBase{
 
-
-	public final static String FILE1 = System.getProperty("user.dir")+"/src/main/java/com/api/qa/resources/APIFile1";
-	public final static String FILE2 = System.getProperty("user.dir")+"/src/main/java/com/api/qa/resources/APIFile2";
-	public final static int STATUSCODE_200 = 200;
-
-
 	public DataUtil() {
-		super();
+		TestBase();
 	}
 
 
-	public static Object[][] getDataFromFile(String filePath) throws IOException {
+	public String FILE1 = prop.getProperty("File1");
+	public final String FILE2 = prop.getProperty("File2");
+	public final static int STATUSCODE_200 = 200;
 
+
+	public static Object[][] getDataFromFile(String filePath) throws IOException {
 
 		List<String> lines = Files.readAllLines(Paths.get(filePath));
 
@@ -55,6 +53,13 @@ public class DataUtil extends TestBase{
 	}
 
 
+	public String getFile1() {
+		return prop.getProperty("File1");
+	}
+
+	public String getFile2() {
+		return prop.getProperty("File1");
+	}
 
 	
 

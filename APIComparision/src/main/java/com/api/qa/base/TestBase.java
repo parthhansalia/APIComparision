@@ -11,7 +11,7 @@ public class TestBase {
 	
 	public static Properties prop;
 
-	public TestBase(){
+	public void TestBase(){
 		try {
 			prop = new Properties();
 			FileInputStream ip = new FileInputStream(System.getProperty("user.dir")+ "/src/main/java/com/api"
@@ -22,14 +22,19 @@ public class TestBase {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+
 	}
 
-	
-	
 
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
+
 
 }

@@ -1,6 +1,7 @@
 package com.api.qa.testcases;
 
 import com.api.qa.APIs.APIResponse;
+import com.api.qa.base.TestBase;
 import com.api.qa.util.DataUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.restassured.response.Response;
@@ -11,16 +12,18 @@ import java.io.IOException;
 
 public class APIComparisionTest {
 
+	DataUtil dataUtil = new DataUtil();
 
 	ObjectMapper mapper = new ObjectMapper();
 
 	public Object[][] getDataFile1() throws IOException {
-		Object[][] testData = DataUtil.getDataFromFile(DataUtil.FILE1);
+		System.out.println("uhaa - " + dataUtil.getFile1());
+		Object[][] testData = DataUtil.getDataFromFile(dataUtil.getFile1());
 		return testData;
 	}
 
 	public Object[][] getDataFile2() throws IOException {
-		Object testData[][] = DataUtil.getDataFromFile(DataUtil.FILE2);
+		Object testData[][] = DataUtil.getDataFromFile(dataUtil.getFile2());
 		return testData;
 	}
 
@@ -33,7 +36,6 @@ public class APIComparisionTest {
 
 	@Test(priority = 1, dataProvider = "Combined")
 	public void getDataFromFile (String api1, String api2) throws IOException {
-
 
 		Response response1 = APIResponse.getAPIResponse(api1);
 		Response response2 = APIResponse.getAPIResponse(api2);
