@@ -47,11 +47,12 @@ public class DataUtil extends TestBase{
 
 
 	public String getFile1() {
-		return prop.getProperty("File1");
+		return System.getProperty("user.dir") + prop.getProperty("File1");
 	}
 
 	public String getFile2() {
-		return prop.getProperty("File2");
+
+		return System.getProperty("user.dir") + prop.getProperty("File2");
 	}
 
 	

@@ -1,7 +1,6 @@
 package com.api.qa.testcases;
 
 import com.api.qa.APIs.APIResponse;
-import com.api.qa.base.TestBase;
 import com.api.qa.util.DataUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import io.restassured.response.Response;
@@ -12,9 +11,9 @@ import java.io.IOException;
 
 public class APIComparisionTest {
 
-	DataUtil dataUtil = new DataUtil();
+	private DataUtil dataUtil = new DataUtil();
 
-	ObjectMapper mapper = new ObjectMapper();
+	private ObjectMapper mapper = new ObjectMapper();
 
 	public Object[][] getDataFile1() throws IOException {
 		Object[][] testData = DataUtil.getDataFromFile(dataUtil.getFile1());
