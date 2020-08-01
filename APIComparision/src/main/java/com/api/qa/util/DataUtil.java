@@ -20,9 +20,6 @@ public class DataUtil extends TestBase{
 		TestBase();
 	}
 
-
-	public String FILE1 = prop.getProperty("File1");
-	public final String FILE2 = prop.getProperty("File2");
 	public final static int STATUSCODE_200 = 200;
 
 
@@ -58,7 +55,7 @@ public class DataUtil extends TestBase{
 	}
 
 	public String getFile2() {
-		return prop.getProperty("File1");
+		return prop.getProperty("File2");
 	}
 
 	

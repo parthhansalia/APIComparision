@@ -17,7 +17,6 @@ public class APIComparisionTest {
 	ObjectMapper mapper = new ObjectMapper();
 
 	public Object[][] getDataFile1() throws IOException {
-		System.out.println("uhaa - " + dataUtil.getFile1());
 		Object[][] testData = DataUtil.getDataFromFile(dataUtil.getFile1());
 		return testData;
 	}
