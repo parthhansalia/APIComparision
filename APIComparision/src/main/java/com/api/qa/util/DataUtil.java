@@ -2,10 +2,6 @@ package com.api.qa.util;
 
 import com.api.qa.base.TestBase;
 import org.apache.commons.lang3.ArrayUtils;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-import org.json.simple.parser.ParseException;
 
 import java.io.IOException;
 import java.nio.file.Files;
