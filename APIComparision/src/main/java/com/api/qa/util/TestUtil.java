@@ -15,7 +15,6 @@ import java.util.stream.IntStream;
 
 public class TestUtil {
 
-	 static JSONObject json = null;
 
 	public final static String FILE1 = System.getProperty("user.dir")+"/src/main/java/com/api/qa/testdata/APIFile1";
 	public final static String FILE2 = System.getProperty("user.dir")+"/src/main/java/com/api/qa/testdata/APIFile2";

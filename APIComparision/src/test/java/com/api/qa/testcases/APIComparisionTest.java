@@ -15,7 +15,6 @@ public class APIComparisionTest {
 	APIResponse apiResponse = new APIResponse();
 	ObjectMapper mapper = new ObjectMapper();
 
-
 	@DataProvider()
 	public Object[][] getDataFile1() throws IOException {
 		Object[][] testData = TestUtil.getDataFromFile(TestUtil.FILE1);
@@ -28,7 +27,7 @@ public class APIComparisionTest {
 	}
 
 	//to run dataprovier parallel
-	@DataProvider(name = "Combined")
+	@DataProvider(name = "Combined", parallel = true)
 	public Object[][] getCombinedData() throws IOException {
 		return TestUtil.combine(getDataFile1(), getDataFile2());
 	}
